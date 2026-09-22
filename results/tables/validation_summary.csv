@@ -1,0 +1,25 @@
+crop,model,random 5-fold,leave-one-year-out,leave-one-raion-out,year-block penalty %
+cartofi,GBM monotonic,0.8496,0.9131,0.9179,7.4726
+cartofi,baseline FE,0.7887,0.7965,0.9304,0.9926
+cartofi,gradient boosting,0.8442,0.9294,0.925,10.0951
+floarea_soarelui,GBM monotonic,0.1861,0.3431,0.2166,84.3444
+floarea_soarelui,baseline FE,0.2588,0.287,0.291,10.8951
+floarea_soarelui,gradient boosting,0.1858,0.3427,0.2171,84.4891
+griu,GBM monotonic,0.1913,0.3841,0.2235,100.7488
+griu,baseline FE,0.3121,0.3426,0.349,9.797
+griu,gradient boosting,0.1909,0.3851,0.2244,101.6915
+legume,GBM monotonic,0.7461,0.7475,0.8028,0.1834
+legume,baseline FE,0.6621,0.6733,0.8182,1.6892
+legume,gradient boosting,0.7465,0.7588,0.8128,1.6454
+orz,GBM monotonic,0.2577,0.4643,0.3099,80.1985
+orz,baseline FE,0.3453,0.3763,0.3975,8.9867
+orz,gradient boosting,0.258,0.4703,0.3085,82.3085
+porumb,GBM monotonic,0.3669,0.7659,0.4039,108.7447
+porumb,baseline FE,0.5759,0.6649,0.5963,15.4438
+porumb,gradient boosting,0.3702,0.7655,0.4116,106.8022
+sfecla,GBM monotonic,0.3416,0.4194,0.3501,22.7899
+sfecla,baseline FE,0.3269,0.3731,0.4873,14.1231
+sfecla,gradient boosting,0.3407,0.4258,0.3535,24.9909
+soia,GBM monotonic,0.6236,0.8141,0.668,30.5372
+soia,baseline FE,0.6755,0.7179,0.7021,6.27
+soia,gradient boosting,0.6205,0.8091,0.6585,30.3902

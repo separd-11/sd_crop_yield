@@ -1,0 +1,73 @@
+scheme,model,rmse,crop,n
+random 5-fold,baseline FE,0.7886961635924189,cartofi,519
+random 5-fold,gradient boosting,0.844218681623827,cartofi,519
+random 5-fold,GBM monotonic,0.849574095422021,cartofi,519
+leave-one-year-out,baseline FE,0.796525041722894,cartofi,519
+leave-one-year-out,gradient boosting,0.929443630364866,cartofi,519
+leave-one-year-out,GBM monotonic,0.913059244203388,cartofi,519
+leave-one-raion-out,baseline FE,0.9303884112922776,cartofi,519
+leave-one-raion-out,gradient boosting,0.9249582304860936,cartofi,519
+leave-one-raion-out,GBM monotonic,0.9178780790680697,cartofi,519
+random 5-fold,baseline FE,0.25884182059401906,floarea_soarelui,627
+random 5-fold,gradient boosting,0.18577511409230346,floarea_soarelui,627
+random 5-fold,GBM monotonic,0.18614314839132995,floarea_soarelui,627
+leave-one-year-out,baseline FE,0.2870429883975079,floarea_soarelui,627
+leave-one-year-out,gradient boosting,0.34273481552543184,floarea_soarelui,627
+leave-one-year-out,GBM monotonic,0.3431445518944487,floarea_soarelui,627
+leave-one-raion-out,baseline FE,0.29102276264572213,floarea_soarelui,627
+leave-one-raion-out,gradient boosting,0.21708534668008467,floarea_soarelui,627
+leave-one-raion-out,GBM monotonic,0.2166356617747468,floarea_soarelui,627
+random 5-fold,baseline FE,0.31205982606922594,griu,627
+random 5-fold,gradient boosting,0.19092524554642284,griu,627
+random 5-fold,GBM monotonic,0.191311253427038,griu,627
+leave-one-year-out,baseline FE,0.3426324537585801,griu,627
+leave-one-year-out,gradient boosting,0.38508004730706624,griu,627
+leave-one-year-out,GBM monotonic,0.38405509513221076,griu,627
+leave-one-raion-out,baseline FE,0.34898451785706536,griu,627
+leave-one-raion-out,gradient boosting,0.22440006567498916,griu,627
+leave-one-raion-out,GBM monotonic,0.22352226508041126,griu,627
+random 5-fold,baseline FE,0.6621153307140021,legume,595
+random 5-fold,gradient boosting,0.7465351497592536,legume,595
+random 5-fold,GBM monotonic,0.7460925505381106,legume,595
+leave-one-year-out,baseline FE,0.673299866996853,legume,595
+leave-one-year-out,gradient boosting,0.7588189763391744,legume,595
+leave-one-year-out,GBM monotonic,0.7474612244587969,legume,595
+leave-one-raion-out,baseline FE,0.8182339861351849,legume,595
+leave-one-raion-out,gradient boosting,0.8127987185726039,legume,595
+leave-one-raion-out,GBM monotonic,0.8028373704677387,legume,595
+random 5-fold,baseline FE,0.345309831950549,orz,627
+random 5-fold,gradient boosting,0.25797901129155437,orz,627
+random 5-fold,GBM monotonic,0.2576565582424803,orz,627
+leave-one-year-out,baseline FE,0.37634162950052263,orz,627
+leave-one-year-out,gradient boosting,0.4703176248996711,orz,627
+leave-one-year-out,GBM monotonic,0.46429325015242123,orz,627
+leave-one-raion-out,baseline FE,0.39753760287698237,orz,627
+leave-one-raion-out,gradient boosting,0.3085379865804043,orz,627
+leave-one-raion-out,GBM monotonic,0.30986925483474786,orz,627
+random 5-fold,baseline FE,0.5759165428101976,porumb,626
+random 5-fold,gradient boosting,0.37016063447698566,porumb,626
+random 5-fold,GBM monotonic,0.36692788245965213,porumb,626
+leave-one-year-out,baseline FE,0.6648602141134238,porumb,626
+leave-one-year-out,gradient boosting,0.7655004004724175,porumb,626
+leave-one-year-out,GBM monotonic,0.7659425759375457,porumb,626
+leave-one-raion-out,baseline FE,0.596257699128753,porumb,626
+leave-one-raion-out,gradient boosting,0.4115746466439517,porumb,626
+leave-one-raion-out,GBM monotonic,0.4038633943801183,porumb,626
+random 5-fold,baseline FE,0.32694559489518926,sfecla,254
+random 5-fold,gradient boosting,0.34066954737877064,sfecla,254
+random 5-fold,GBM monotonic,0.3415836723475067,sfecla,254
+leave-one-year-out,baseline FE,0.3731203472168721,sfecla,254
+leave-one-year-out,gradient boosting,0.42580586662416975,sfecla,254
+leave-one-year-out,GBM monotonic,0.4194302157399982,sfecla,254
+leave-one-raion-out,baseline FE,0.48727653700606394,sfecla,254
+leave-one-raion-out,gradient boosting,0.3534693357071883,sfecla,254
+leave-one-raion-out,GBM monotonic,0.35012815721589247,sfecla,254
+random 5-fold,baseline FE,0.6755126810456274,soia,387
+random 5-fold,gradient boosting,0.6205250841153916,soia,387
+random 5-fold,GBM monotonic,0.6236421167026674,soia,387
+leave-one-year-out,baseline FE,0.7178671881905603,soia,387
+leave-one-year-out,gradient boosting,0.8091040883405101,soia,387
+leave-one-year-out,GBM monotonic,0.8140852105305787,soia,387
+leave-one-raion-out,baseline FE,0.702130141362095,soia,387
+leave-one-raion-out,gradient boosting,0.6584976019360649,soia,387
+leave-one-raion-out,GBM monotonic,0.6680292976569362,soia,387

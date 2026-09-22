@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Downloaded and generated data: every script regenerates it with `make data`
+data/raw/
+data/processed/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

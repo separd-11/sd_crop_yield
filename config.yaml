@@ -1,0 +1,45 @@
+# Configuration for the crop-yield pipeline.
+# Everything the analysis depends on is declared here, not hard-coded in scripts.
+
+data:
+  # Moldovan National Bureau of Statistics, PxWeb API
+  bns_table: "https://statbank.statistica.md/PxWeb/api/v1/ro/60%20Statistica%20regionala/16%20AGR/AGR020600reg.px"
+  # Crop codes as used by the BNS table (see data/raw/yields_meta.json after fetching)
+  crop_codes: ["1", "3", "7", "12", "14", "15", "17", "18"]
+  indicator_code: "1"          # 1 = average yield, centners per hectare
+  # ERA5 reanalysis served by Open-Meteo (no API key required)
+  weather_api: "https://archive-api.open-meteo.com/v1/archive"
+  geocode_api: "https://geocoding-api.open-meteo.com/v1/search"
+  start_date: "2007-01-01"
+  end_date: "2025-10-31"
+
+features:
+  season_months: [4, 5, 6, 7, 8]   # April-August growing season
+  gdd_base: 10.0                   # degree-day base temperature, Celsius
+  gdd_cap: 30.0                    # above this, heat stops helping
+  kdd_threshold: 30.0              # killing degree days above this
+  hot_day_threshold: 32.0
+  dry_day_mm: 1.0                  # a day below this counts as dry
+
+model:
+  target: "log_yield"
+  baseline_features: ["gdd", "kdd", "prec_season", "prec_season_sq"]
+  seed: 20260922
+  # HistGradientBoosting hyper-parameters
+  gbm:
+    max_iter: 400
+    learning_rate: 0.05
+    max_depth: 4
+    min_samples_leaf: 20
+    l2_regularization: 1.0
+  # Heat above 30 C must not raise yield. Constraining it turns the
+  # partial dependence into a readable dose-response curve.
+  monotonic:
+    kdd: -1
+    hot_days: -1
+  # Each seed splits at different points; averaging removes the staircase
+  # without changing the model class.
+  curve_seeds: 12
+
+validation:
+  random_folds: 5
