@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all data panel explore model validate mechanism clean
+.PHONY: all data panel explore model validate mechanism app clean
 
 all: explore mechanism
 
@@ -24,6 +24,10 @@ validate: model
 mechanism: validate
 	$(PY) src/08_extrapolation.py
 	$(PY) src/09_shrinkage.py
+	$(PY) src/10_map.py
+
+app:
+	streamlit run app/app.py
 
 clean:
 	rm -f data/processed/*.csv results/tables/*.csv results/figures/*.png
