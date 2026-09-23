@@ -52,3 +52,19 @@ CROP_LABELS = {
 }
 
 WINTER_CROPS = {"griu", "orz"}
+
+
+# Rows that aggregate other rows. Everything else in the BNS table is a
+# territory we model, including Chisinau and Gagauzia, which sit at the same
+# level as the regions rather than nested under them.
+AGGREGATES = {"Total pe tara", "Nord", "Centru", "Sud"}
+
+# Where the weather for a territory should be measured, when its own name does
+# not geocode to the right place.
+GEOCODE_OVERRIDES = {"U.T.A Gagauzia": "Comrat"}
+
+
+def territories(labels) -> list[str]:
+    """Territory names from the BNS geography dimension, aggregates removed."""
+    return [str(g).replace("..", "").strip() for g in labels
+            if str(g).strip() not in AGGREGATES]

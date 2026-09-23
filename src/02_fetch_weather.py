@@ -8,7 +8,8 @@ import time
 import urllib.parse
 import urllib.request
 
-from utils import RAW, get_logger, load_config, read_json, write_json
+from utils import (GEOCODE_OVERRIDES, RAW, get_logger, load_config,
+                   read_json, territories, write_json)
 
 log = get_logger("fetch_weather")
 
@@ -17,14 +18,15 @@ MAX_RETRIES = 5
 
 
 def raion_names() -> list[str]:
-    """Raion labels from the yields file; the '..' prefix marks a raion."""
+    """Territory labels from the yields file, aggregate rows removed."""
     meta = read_json(RAW / "yields.json")
-    labels = meta["dimension"]["Raioane/Regiuni"]["category"]["label"].values()
-    return [g.replace("..", "").strip() for g in labels if g.startswith("..")]
+    return territories(
+        meta["dimension"]["Raioane/Regiuni"]["category"]["label"].values())
 
 
 def geocode(name: str, api: str) -> tuple[float, float] | None:
-    query = name.split()[-1] if name.startswith("Municipiul") else name
+    query = GEOCODE_OVERRIDES.get(
+        name, name.split()[-1] if name.startswith("Municipiul") else name)
     url = f"{api}?name={urllib.parse.quote(query)}&count=5&country=MD"
     try:
         with urllib.request.urlopen(url, timeout=30) as resp:

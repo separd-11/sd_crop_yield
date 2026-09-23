@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 
 from features import weather_features
-from utils import (CROP_LABELS, PROCESSED, RAW, WINTER_CROPS, get_logger,
-                   load_config, read_json)
+from utils import (AGGREGATES, CROP_LABELS, PROCESSED, RAW, WINTER_CROPS,
+                   get_logger, load_config, read_json)
 
 log = get_logger("build_panel")
 
@@ -33,7 +33,7 @@ def main() -> None:
 
     rows = []
     for gi, label in enumerate(geo):
-        if not label.startswith(".."):
+        if label.strip() in AGGREGATES:
             continue
         raion = label.replace("..", "").strip()
         if raion not in wx:

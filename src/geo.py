@@ -18,7 +18,8 @@ GEOJSON_URL = ("https://github.com/wmgeolab/geoBoundaries/raw/9469f09/"
 
 # geoBoundaries spells three of them differently from the statistics office.
 ALIASES = {"Municipiul  Balti": "Balti", "Riscani": "RIscani",
-           "Singerei": "SIngerei"}
+           "Singerei": "SIngerei", "Municipiul Chisinau": "Chisinau",
+           "U.T.A Gagauzia": "Gagauzia"}
 
 
 def ensure_geometry() -> dict:
