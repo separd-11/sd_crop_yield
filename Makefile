@@ -1,8 +1,8 @@
 PY ?= python
 
-.PHONY: all data panel explore model validate clean
+.PHONY: all data panel explore model validate mechanism clean
 
-all: validate
+all: explore mechanism
 
 data:
 	$(PY) src/01_fetch_yields.py
@@ -20,6 +20,10 @@ model: panel
 
 validate: model
 	$(PY) src/07_validation.py
+
+mechanism: validate
+	$(PY) src/08_extrapolation.py
+	$(PY) src/09_shrinkage.py
 
 clean:
 	rm -f data/processed/*.csv results/tables/*.csv results/figures/*.png
