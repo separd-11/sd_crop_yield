@@ -1,0 +1,145 @@
+crop,scheme,model,rmse
+cartofi,random 5-fold,global mean,0.977
+cartofi,random 5-fold,raion mean,0.8881
+cartofi,random 5-fold,raion mean + trend,0.8468
+cartofi,random 5-fold,last year,1.01
+cartofi,random 5-fold,baseline FE,0.7989
+cartofi,random 5-fold,gradient boosting,0.8884
+cartofi,leave-one-year-out,global mean,0.9855
+cartofi,leave-one-year-out,raion mean,0.8901
+cartofi,leave-one-year-out,raion mean + trend,0.8566
+cartofi,leave-one-year-out,last year,1.0246
+cartofi,leave-one-year-out,baseline FE,0.8189
+cartofi,leave-one-year-out,gradient boosting,0.9433
+cartofi,leave-one-raion-out,global mean,0.9804
+cartofi,leave-one-raion-out,raion mean,0.9804
+cartofi,leave-one-raion-out,raion mean + trend,0.9214
+cartofi,leave-one-raion-out,last year,0.9804
+cartofi,leave-one-raion-out,baseline FE,0.9271
+cartofi,leave-one-raion-out,gradient boosting,0.9403
+floarea_soarelui,random 5-fold,global mean,0.4252
+floarea_soarelui,random 5-fold,raion mean,0.4079
+floarea_soarelui,random 5-fold,raion mean + trend,0.3511
+floarea_soarelui,random 5-fold,last year,0.5087
+floarea_soarelui,random 5-fold,baseline FE,0.2589
+floarea_soarelui,random 5-fold,gradient boosting,0.1826
+floarea_soarelui,leave-one-year-out,global mean,0.4375
+floarea_soarelui,leave-one-year-out,raion mean,0.4065
+floarea_soarelui,leave-one-year-out,raion mean + trend,0.3681
+floarea_soarelui,leave-one-year-out,last year,0.5333
+floarea_soarelui,leave-one-year-out,baseline FE,0.2887
+floarea_soarelui,leave-one-year-out,gradient boosting,0.3331
+floarea_soarelui,leave-one-raion-out,global mean,0.4244
+floarea_soarelui,leave-one-raion-out,raion mean,0.4244
+floarea_soarelui,leave-one-raion-out,raion mean + trend,0.3748
+floarea_soarelui,leave-one-raion-out,last year,0.4244
+floarea_soarelui,leave-one-raion-out,baseline FE,0.2898
+floarea_soarelui,leave-one-raion-out,gradient boosting,0.2107
+griu,random 5-fold,global mean,0.4326
+griu,random 5-fold,raion mean,0.4237
+griu,random 5-fold,raion mean + trend,0.3688
+griu,random 5-fold,last year,0.5547
+griu,random 5-fold,baseline FE,0.3145
+griu,random 5-fold,gradient boosting,0.1918
+griu,leave-one-year-out,global mean,0.448
+griu,leave-one-year-out,raion mean,0.4226
+griu,leave-one-year-out,raion mean + trend,0.3839
+griu,leave-one-year-out,last year,0.5843
+griu,leave-one-year-out,baseline FE,0.3494
+griu,leave-one-year-out,gradient boosting,0.3819
+griu,leave-one-raion-out,global mean,0.4329
+griu,leave-one-raion-out,raion mean,0.4329
+griu,leave-one-raion-out,raion mean + trend,0.3851
+griu,leave-one-raion-out,last year,0.4329
+griu,leave-one-raion-out,baseline FE,0.3501
+griu,leave-one-raion-out,gradient boosting,0.2241
+legume,random 5-fold,global mean,0.9174
+legume,random 5-fold,raion mean,0.82
+legume,random 5-fold,raion mean + trend,0.6967
+legume,random 5-fold,last year,0.8387
+legume,random 5-fold,baseline FE,0.6911
+legume,random 5-fold,gradient boosting,0.7678
+legume,leave-one-year-out,global mean,0.9306
+legume,leave-one-year-out,raion mean,0.8142
+legume,leave-one-year-out,raion mean + trend,0.6993
+legume,leave-one-year-out,last year,0.8268
+legume,leave-one-year-out,baseline FE,0.6985
+legume,leave-one-year-out,gradient boosting,0.7807
+legume,leave-one-raion-out,global mean,0.9247
+legume,leave-one-raion-out,raion mean,0.9247
+legume,leave-one-raion-out,raion mean + trend,0.8224
+legume,leave-one-raion-out,last year,0.9247
+legume,leave-one-raion-out,baseline FE,0.8328
+legume,leave-one-raion-out,gradient boosting,0.844
+orz,random 5-fold,global mean,0.5145
+orz,random 5-fold,raion mean,0.5028
+orz,random 5-fold,raion mean + trend,0.3988
+orz,random 5-fold,last year,0.5913
+orz,random 5-fold,baseline FE,0.3551
+orz,random 5-fold,gradient boosting,0.2618
+orz,leave-one-year-out,global mean,0.5303
+orz,leave-one-year-out,raion mean,0.4971
+orz,leave-one-year-out,raion mean + trend,0.4132
+orz,leave-one-year-out,last year,0.6171
+orz,leave-one-year-out,baseline FE,0.3845
+orz,leave-one-year-out,gradient boosting,0.4774
+orz,leave-one-raion-out,global mean,0.514
+orz,leave-one-raion-out,raion mean,0.514
+orz,leave-one-raion-out,raion mean + trend,0.4258
+orz,leave-one-raion-out,last year,0.514
+orz,leave-one-raion-out,baseline FE,0.4
+orz,leave-one-raion-out,gradient boosting,0.3018
+porumb,random 5-fold,global mean,0.8635
+porumb,random 5-fold,raion mean,0.8594
+porumb,random 5-fold,raion mean + trend,0.807
+porumb,random 5-fold,last year,1.1494
+porumb,random 5-fold,baseline FE,0.5812
+porumb,random 5-fold,gradient boosting,0.3603
+porumb,leave-one-year-out,global mean,0.8961
+porumb,leave-one-year-out,raion mean,0.8596
+porumb,leave-one-year-out,raion mean + trend,0.8599
+porumb,leave-one-year-out,last year,1.2338
+porumb,leave-one-year-out,baseline FE,0.6659
+porumb,leave-one-year-out,gradient boosting,0.734
+porumb,leave-one-raion-out,global mean,0.8645
+porumb,leave-one-raion-out,raion mean,0.8645
+porumb,leave-one-raion-out,raion mean + trend,0.8146
+porumb,leave-one-raion-out,last year,0.8645
+porumb,leave-one-raion-out,baseline FE,0.5987
+porumb,leave-one-raion-out,gradient boosting,0.3983
+sfecla,random 5-fold,global mean,0.4753
+sfecla,random 5-fold,raion mean,0.4553
+sfecla,random 5-fold,raion mean + trend,0.4351
+sfecla,random 5-fold,last year,0.5624
+sfecla,random 5-fold,baseline FE,0.3269
+sfecla,random 5-fold,gradient boosting,0.3407
+sfecla,leave-one-year-out,global mean,0.4875
+sfecla,leave-one-year-out,raion mean,0.4642
+sfecla,leave-one-year-out,raion mean + trend,0.4625
+sfecla,leave-one-year-out,last year,0.6088
+sfecla,leave-one-year-out,baseline FE,0.3731
+sfecla,leave-one-year-out,gradient boosting,0.4258
+sfecla,leave-one-raion-out,global mean,0.4778
+sfecla,leave-one-raion-out,raion mean,0.4778
+sfecla,leave-one-raion-out,raion mean + trend,0.442
+sfecla,leave-one-raion-out,last year,0.4778
+sfecla,leave-one-raion-out,baseline FE,0.4873
+sfecla,leave-one-raion-out,gradient boosting,0.3531
+soia,random 5-fold,global mean,0.9172
+soia,random 5-fold,raion mean,0.8833
+soia,random 5-fold,raion mean + trend,0.861
+soia,random 5-fold,last year,1.076
+soia,random 5-fold,baseline FE,0.7031
+soia,random 5-fold,gradient boosting,0.67
+soia,leave-one-year-out,global mean,0.9367
+soia,leave-one-year-out,raion mean,0.8714
+soia,leave-one-year-out,raion mean + trend,0.8886
+soia,leave-one-year-out,last year,1.1409
+soia,leave-one-year-out,baseline FE,0.7375
+soia,leave-one-year-out,gradient boosting,0.7836
+soia,leave-one-raion-out,global mean,0.9223
+soia,leave-one-raion-out,raion mean,0.9223
+soia,leave-one-raion-out,raion mean + trend,0.8985
+soia,leave-one-raion-out,last year,0.9223
+soia,leave-one-raion-out,baseline FE,0.7131
+soia,leave-one-raion-out,gradient boosting,0.6906

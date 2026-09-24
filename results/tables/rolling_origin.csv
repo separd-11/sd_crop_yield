@@ -1,0 +1,289 @@
+crop,year,model,n_train_years,rmse
+cartofi,2014,raion mean + trend,7,0.7386
+cartofi,2014,baseline FE,7,0.8108
+cartofi,2014,gradient boosting,7,1.2822
+cartofi,2015,raion mean + trend,8,0.8967
+cartofi,2015,baseline FE,8,0.6348
+cartofi,2015,gradient boosting,8,0.8632
+cartofi,2016,raion mean + trend,9,0.7164
+cartofi,2016,baseline FE,9,0.7286
+cartofi,2016,gradient boosting,9,0.7729
+cartofi,2017,raion mean + trend,10,0.6778
+cartofi,2017,baseline FE,10,0.7318
+cartofi,2017,gradient boosting,10,0.8564
+cartofi,2018,raion mean + trend,11,0.8343
+cartofi,2018,baseline FE,11,0.8375
+cartofi,2018,gradient boosting,11,1.0931
+cartofi,2019,raion mean + trend,12,0.7878
+cartofi,2019,baseline FE,12,0.7817
+cartofi,2019,gradient boosting,12,0.8301
+cartofi,2020,raion mean + trend,13,0.8091
+cartofi,2020,baseline FE,13,0.7862
+cartofi,2020,gradient boosting,13,0.9693
+cartofi,2021,raion mean + trend,14,0.858
+cartofi,2021,baseline FE,14,0.9562
+cartofi,2021,gradient boosting,14,0.907
+cartofi,2022,raion mean + trend,15,0.8147
+cartofi,2022,baseline FE,15,0.7368
+cartofi,2022,gradient boosting,15,0.7412
+cartofi,2023,raion mean + trend,16,0.9494
+cartofi,2023,baseline FE,16,0.8854
+cartofi,2023,gradient boosting,16,0.8051
+cartofi,2024,raion mean + trend,17,0.9139
+cartofi,2024,baseline FE,17,0.6579
+cartofi,2024,gradient boosting,17,0.6946
+cartofi,2025,raion mean + trend,18,0.9184
+cartofi,2025,baseline FE,18,0.8376
+cartofi,2025,gradient boosting,18,0.962
+floarea_soarelui,2014,raion mean + trend,7,0.1689
+floarea_soarelui,2014,baseline FE,7,0.2664
+floarea_soarelui,2014,gradient boosting,7,0.229
+floarea_soarelui,2015,raion mean + trend,8,0.3583
+floarea_soarelui,2015,baseline FE,8,0.3577
+floarea_soarelui,2015,gradient boosting,8,0.3623
+floarea_soarelui,2016,raion mean + trend,9,0.236
+floarea_soarelui,2016,baseline FE,9,0.2268
+floarea_soarelui,2016,gradient boosting,9,0.2814
+floarea_soarelui,2017,raion mean + trend,10,0.1826
+floarea_soarelui,2017,baseline FE,10,0.113
+floarea_soarelui,2017,gradient boosting,10,0.3423
+floarea_soarelui,2018,raion mean + trend,11,0.0985
+floarea_soarelui,2018,baseline FE,11,0.1241
+floarea_soarelui,2018,gradient boosting,11,0.2497
+floarea_soarelui,2019,raion mean + trend,12,0.1288
+floarea_soarelui,2019,baseline FE,12,0.1632
+floarea_soarelui,2019,gradient boosting,12,0.733
+floarea_soarelui,2020,raion mean + trend,13,0.7564
+floarea_soarelui,2020,baseline FE,13,0.7594
+floarea_soarelui,2020,gradient boosting,13,0.4975
+floarea_soarelui,2021,raion mean + trend,14,0.2148
+floarea_soarelui,2021,baseline FE,14,0.1221
+floarea_soarelui,2021,gradient boosting,14,0.3828
+floarea_soarelui,2022,raion mean + trend,15,0.4989
+floarea_soarelui,2022,baseline FE,15,0.4134
+floarea_soarelui,2022,gradient boosting,15,0.2826
+floarea_soarelui,2023,raion mean + trend,16,0.2303
+floarea_soarelui,2023,baseline FE,16,0.1822
+floarea_soarelui,2023,gradient boosting,16,0.1997
+floarea_soarelui,2024,raion mean + trend,17,0.4658
+floarea_soarelui,2024,baseline FE,17,0.2094
+floarea_soarelui,2024,gradient boosting,17,0.2679
+floarea_soarelui,2025,raion mean + trend,18,0.2645
+floarea_soarelui,2025,baseline FE,18,0.2497
+floarea_soarelui,2025,gradient boosting,18,0.2581
+griu,2014,raion mean + trend,7,0.3027
+griu,2014,baseline FE,7,0.1869
+griu,2014,gradient boosting,7,0.2384
+griu,2015,raion mean + trend,8,0.1453
+griu,2015,baseline FE,8,0.352
+griu,2015,gradient boosting,8,0.3226
+griu,2016,raion mean + trend,9,0.2793
+griu,2016,baseline FE,9,0.2146
+griu,2016,gradient boosting,9,0.343
+griu,2017,raion mean + trend,10,0.1594
+griu,2017,baseline FE,10,0.1252
+griu,2017,gradient boosting,10,0.3429
+griu,2018,raion mean + trend,11,0.2332
+griu,2018,baseline FE,11,0.1692
+griu,2018,gradient boosting,11,0.222
+griu,2019,raion mean + trend,12,0.1772
+griu,2019,baseline FE,12,0.2007
+griu,2019,gradient boosting,12,0.3644
+griu,2020,raion mean + trend,13,1.0552
+griu,2020,baseline FE,13,1.1465
+griu,2020,gradient boosting,13,0.888
+griu,2021,raion mean + trend,14,0.4591
+griu,2021,baseline FE,14,0.2674
+griu,2021,gradient boosting,14,0.5961
+griu,2022,raion mean + trend,15,0.3019
+griu,2022,baseline FE,15,0.2015
+griu,2022,gradient boosting,15,0.16
+griu,2023,raion mean + trend,16,0.2754
+griu,2023,baseline FE,16,0.4084
+griu,2023,gradient boosting,16,0.2761
+griu,2024,raion mean + trend,17,0.2356
+griu,2024,baseline FE,17,0.3307
+griu,2024,gradient boosting,17,0.3175
+griu,2025,raion mean + trend,18,0.2302
+griu,2025,baseline FE,18,0.2904
+griu,2025,gradient boosting,18,0.3237
+legume,2014,raion mean + trend,7,0.5485
+legume,2014,baseline FE,7,0.5761
+legume,2014,gradient boosting,7,0.7491
+legume,2015,raion mean + trend,8,0.5595
+legume,2015,baseline FE,8,0.5508
+legume,2015,gradient boosting,8,0.8492
+legume,2016,raion mean + trend,9,0.7687
+legume,2016,baseline FE,9,0.7684
+legume,2016,gradient boosting,9,1.0053
+legume,2017,raion mean + trend,10,0.7075
+legume,2017,baseline FE,10,0.7406
+legume,2017,gradient boosting,10,0.8423
+legume,2018,raion mean + trend,11,0.7093
+legume,2018,baseline FE,11,0.6994
+legume,2018,gradient boosting,11,0.7424
+legume,2019,raion mean + trend,12,0.9368
+legume,2019,baseline FE,12,0.9381
+legume,2019,gradient boosting,12,0.999
+legume,2020,raion mean + trend,13,0.7093
+legume,2020,baseline FE,13,0.7127
+legume,2020,gradient boosting,13,1.181
+legume,2021,raion mean + trend,14,0.8575
+legume,2021,baseline FE,14,0.8872
+legume,2021,gradient boosting,14,0.8516
+legume,2022,raion mean + trend,15,0.793
+legume,2022,baseline FE,15,0.787
+legume,2022,gradient boosting,15,0.8409
+legume,2023,raion mean + trend,16,0.6029
+legume,2023,baseline FE,16,0.6153
+legume,2023,gradient boosting,16,0.6482
+legume,2024,raion mean + trend,17,0.774
+legume,2024,baseline FE,17,0.7556
+legume,2024,gradient boosting,17,0.7722
+legume,2025,raion mean + trend,18,0.7792
+legume,2025,baseline FE,18,0.7828
+legume,2025,gradient boosting,18,0.7359
+orz,2014,raion mean + trend,7,0.2919
+orz,2014,baseline FE,7,0.1964
+orz,2014,gradient boosting,7,0.1873
+orz,2015,raion mean + trend,8,0.2167
+orz,2015,baseline FE,8,0.3305
+orz,2015,gradient boosting,8,0.3086
+orz,2016,raion mean + trend,9,0.3482
+orz,2016,baseline FE,9,0.31
+orz,2016,gradient boosting,9,0.4928
+orz,2017,raion mean + trend,10,0.1673
+orz,2017,baseline FE,10,0.1886
+orz,2017,gradient boosting,10,0.3361
+orz,2018,raion mean + trend,11,0.3178
+orz,2018,baseline FE,11,0.2536
+orz,2018,gradient boosting,11,0.3317
+orz,2019,raion mean + trend,12,0.2312
+orz,2019,baseline FE,12,0.2571
+orz,2019,gradient boosting,12,0.311
+orz,2020,raion mean + trend,13,0.9541
+orz,2020,baseline FE,13,1.0555
+orz,2020,gradient boosting,13,0.7726
+orz,2021,raion mean + trend,14,0.3677
+orz,2021,baseline FE,14,0.1954
+orz,2021,gradient boosting,14,0.5635
+orz,2022,raion mean + trend,15,0.3243
+orz,2022,baseline FE,15,0.2449
+orz,2022,gradient boosting,15,0.265
+orz,2023,raion mean + trend,16,0.3712
+orz,2023,baseline FE,16,0.5033
+orz,2023,gradient boosting,16,0.4184
+orz,2024,raion mean + trend,17,0.2441
+orz,2024,baseline FE,17,0.3845
+orz,2024,gradient boosting,17,0.3274
+orz,2025,raion mean + trend,18,0.253
+orz,2025,baseline FE,18,0.2834
+orz,2025,gradient boosting,18,0.481
+porumb,2014,raion mean + trend,7,0.3071
+porumb,2014,baseline FE,7,0.7355
+porumb,2014,gradient boosting,7,0.4172
+porumb,2015,raion mean + trend,8,0.892
+porumb,2015,baseline FE,8,0.2124
+porumb,2015,gradient boosting,8,0.478
+porumb,2016,raion mean + trend,9,0.3425
+porumb,2016,baseline FE,9,0.4906
+porumb,2016,gradient boosting,9,0.283
+porumb,2017,raion mean + trend,10,0.2784
+porumb,2017,baseline FE,10,0.2777
+porumb,2017,gradient boosting,10,0.6724
+porumb,2018,raion mean + trend,11,0.1821
+porumb,2018,baseline FE,11,0.1921
+porumb,2018,gradient boosting,11,0.8754
+porumb,2019,raion mean + trend,12,0.3067
+porumb,2019,baseline FE,12,0.3615
+porumb,2019,gradient boosting,12,0.9594
+porumb,2020,raion mean + trend,13,1.8831
+porumb,2020,baseline FE,13,1.9139
+porumb,2020,gradient boosting,13,1.1857
+porumb,2021,raion mean + trend,14,0.6059
+porumb,2021,baseline FE,14,0.3156
+porumb,2021,gradient boosting,14,1.4218
+porumb,2022,raion mean + trend,15,1.023
+porumb,2022,baseline FE,15,0.8019
+porumb,2022,gradient boosting,15,0.7665
+porumb,2023,raion mean + trend,16,0.4607
+porumb,2023,baseline FE,16,0.3648
+porumb,2023,gradient boosting,16,0.3332
+porumb,2024,raion mean + trend,17,1.0407
+porumb,2024,baseline FE,17,0.4304
+porumb,2024,gradient boosting,17,0.4938
+porumb,2025,raion mean + trend,18,0.4684
+porumb,2025,baseline FE,18,0.4034
+porumb,2025,gradient boosting,18,0.5445
+sfecla,2014,raion mean + trend,7,0.4344
+sfecla,2014,baseline FE,7,0.2935
+sfecla,2014,gradient boosting,7,0.3726
+sfecla,2015,raion mean + trend,8,0.5493
+sfecla,2015,baseline FE,8,0.4718
+sfecla,2015,gradient boosting,8,0.9225
+sfecla,2016,raion mean + trend,9,0.2553
+sfecla,2016,baseline FE,9,0.243
+sfecla,2016,gradient boosting,9,0.4058
+sfecla,2017,raion mean + trend,10,0.2472
+sfecla,2017,baseline FE,10,0.2277
+sfecla,2017,gradient boosting,10,0.3625
+sfecla,2018,raion mean + trend,11,0.3551
+sfecla,2018,baseline FE,11,0.2969
+sfecla,2018,gradient boosting,11,0.4239
+sfecla,2019,raion mean + trend,12,0.2575
+sfecla,2019,baseline FE,12,0.2695
+sfecla,2019,gradient boosting,12,0.3673
+sfecla,2020,raion mean + trend,13,0.4386
+sfecla,2020,baseline FE,13,0.4383
+sfecla,2020,gradient boosting,13,0.364
+sfecla,2021,raion mean + trend,14,0.1407
+sfecla,2021,baseline FE,14,0.1236
+sfecla,2021,gradient boosting,14,0.4727
+sfecla,2022,raion mean + trend,15,0.2779
+sfecla,2022,baseline FE,15,0.1761
+sfecla,2022,gradient boosting,15,0.3058
+sfecla,2023,raion mean + trend,16,0.2452
+sfecla,2023,baseline FE,16,0.1218
+sfecla,2023,gradient boosting,16,0.1439
+sfecla,2024,raion mean + trend,17,1.041
+sfecla,2024,baseline FE,17,0.6923
+sfecla,2024,gradient boosting,17,0.6662
+sfecla,2025,raion mean + trend,18,0.2007
+sfecla,2025,baseline FE,18,0.2019
+sfecla,2025,gradient boosting,18,0.1616
+soia,2014,raion mean + trend,7,0.5113
+soia,2014,baseline FE,7,0.8693
+soia,2014,gradient boosting,7,0.4843
+soia,2015,raion mean + trend,8,1.2208
+soia,2015,baseline FE,8,0.488
+soia,2015,gradient boosting,8,0.8062
+soia,2016,raion mean + trend,9,0.6685
+soia,2016,baseline FE,9,0.7493
+soia,2016,gradient boosting,9,0.4638
+soia,2017,raion mean + trend,10,0.5891
+soia,2017,baseline FE,10,0.6811
+soia,2017,gradient boosting,10,0.637
+soia,2018,raion mean + trend,11,0.6218
+soia,2018,baseline FE,11,0.6809
+soia,2018,gradient boosting,11,1.267
+soia,2019,raion mean + trend,12,0.4144
+soia,2019,baseline FE,12,0.4927
+soia,2019,gradient boosting,12,1.2272
+soia,2020,raion mean + trend,13,1.1898
+soia,2020,baseline FE,13,1.158
+soia,2020,gradient boosting,13,0.476
+soia,2021,raion mean + trend,14,0.6777
+soia,2021,baseline FE,14,0.5645
+soia,2021,gradient boosting,14,0.7298
+soia,2022,raion mean + trend,15,1.1435
+soia,2022,baseline FE,15,0.9757
+soia,2022,gradient boosting,15,0.9504
+soia,2023,raion mean + trend,16,0.5598
+soia,2023,baseline FE,16,0.6694
+soia,2023,gradient boosting,16,1.0147
+soia,2024,raion mean + trend,17,0.9413
+soia,2024,baseline FE,17,0.6143
+soia,2024,gradient boosting,17,0.6954
+soia,2025,raion mean + trend,18,1.1162
+soia,2025,baseline FE,18,1.0124
+soia,2025,gradient boosting,18,0.8878

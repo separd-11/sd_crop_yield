@@ -70,6 +70,60 @@ def monotonic_vector(constraints: dict | None) -> np.ndarray | None:
     return vec
 
 
+class GlobalMean:
+    """Everything is the average. The floor any model has to clear."""
+
+    def fit(self, df: pd.DataFrame, y: np.ndarray) -> "GlobalMean":
+        self.mu_ = float(np.mean(y))
+        return self
+
+    def predict(self, df: pd.DataFrame) -> np.ndarray:
+        return np.full(len(df), self.mu_)
+
+
+class RaionMean:
+    """Each raion keeps its own long-run average, and nothing else happens."""
+
+    def __init__(self, with_trend: bool = False):
+        self.with_trend = with_trend
+
+    def fit(self, df: pd.DataFrame, y: np.ndarray) -> "RaionMean":
+        y = np.asarray(y, float)
+        self.slope_ = 0.0
+        if self.with_trend:
+            t = df["trend"].to_numpy(float)
+            self.slope_ = float(np.polyfit(t, y, 1)[0])
+            y = y - self.slope_ * t
+        self.mu_ = float(np.mean(y))
+        self.by_raion_ = pd.Series(y, index=df["raion"].to_numpy()).groupby(level=0).mean()
+        return self
+
+    def predict(self, df: pd.DataFrame) -> np.ndarray:
+        out = df["raion"].map(self.by_raion_).fillna(self.mu_).to_numpy(float)
+        return out + self.slope_ * df["trend"].to_numpy(float)
+
+
+class Persistence:
+    """Last year's yield in the same raion. What a farmer would guess."""
+
+    def fit(self, df: pd.DataFrame, y: np.ndarray) -> "Persistence":
+        self.table_ = {(r, yr): v for r, yr, v
+                       in zip(df["raion"], df["year"], np.asarray(y, float))}
+        self.by_raion_ = pd.Series(np.asarray(y, float),
+                                   index=df["raion"].to_numpy()).groupby(level=0).mean()
+        self.mu_ = float(np.mean(y))
+        return self
+
+    def predict(self, df: pd.DataFrame) -> np.ndarray:
+        out = []
+        for raion, year in zip(df["raion"], df["year"]):
+            value = self.table_.get((raion, year - 1))
+            if value is None:
+                value = self.by_raion_.get(raion, self.mu_)
+            out.append(value)
+        return np.asarray(out, float)
+
+
 def make_gbm(cfg: dict, seed: int,
              constraints: dict | None = None) -> HistGradientBoostingRegressor:
     return HistGradientBoostingRegressor(
