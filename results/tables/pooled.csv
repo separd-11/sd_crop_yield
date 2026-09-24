@@ -1,0 +1,25 @@
+scheme,model,rmse
+random 5-fold,raion x crop mean + trend,0.6354
+random 5-fold,pooled FE,0.5689
+random 5-fold,"ridge, all features",0.5734
+random 5-fold,splines + ridge,0.5736
+random 5-fold,extra trees,0.5193
+random 5-fold,gradient boosting,0.5144
+leave-one-year-out,raion x crop mean + trend,0.6465
+leave-one-year-out,pooled FE,0.6054
+leave-one-year-out,"ridge, all features",0.6112
+leave-one-year-out,splines + ridge,0.6183
+leave-one-year-out,extra trees,0.6236
+leave-one-year-out,gradient boosting,0.6369
+leave-one-raion-out,raion x crop mean + trend,1.1226
+leave-one-raion-out,pooled FE,0.595
+leave-one-raion-out,"ridge, all features",0.595
+leave-one-raion-out,splines + ridge,0.5954
+leave-one-raion-out,extra trees,0.5305
+leave-one-raion-out,gradient boosting,0.5459
+rolling origin,raion x crop mean + trend,0.6013
+rolling origin,pooled FE,0.6193
+rolling origin,"ridge, all features",0.6212
+rolling origin,splines + ridge,0.6195
+rolling origin,extra trees,0.615
+rolling origin,gradient boosting,0.6037

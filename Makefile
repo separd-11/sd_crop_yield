@@ -33,6 +33,7 @@ baselines: panel
 	$(PY) src/12_naive_baselines.py
 	$(PY) src/13_rolling_origin.py
 	$(PY) src/14_model_zoo.py
+	$(PY) src/15_pooled.py
 
 app:
 	streamlit run app/app.py

@@ -76,6 +76,48 @@ def monotonic_vector(constraints: dict | None) -> np.ndarray | None:
     return vec
 
 
+class PooledFE:
+    """One model over every crop at once, with its own weather slopes per crop.
+
+    log(yield) = a_raion + a_crop + b_crop * trend + f_crop(weather) + e
+
+    Each crop keeps a separate response, so nothing is forced to share a slope,
+    but the raion effects and the noise variance are estimated on all 4500 rows
+    instead of six hundred.
+    """
+
+    def __init__(self, weather_features: list[str]):
+        self.weather_features = list(weather_features)
+        self.columns_: list[str] | None = None
+
+    def _design(self, df: pd.DataFrame, columns: list[str] | None = None) -> pd.DataFrame:
+        parts = [pd.get_dummies(df["raion"], prefix="r").astype(float),
+                 pd.get_dummies(df["crop"], prefix="c").astype(float)]
+        crops = sorted(df["crop"].unique()) if columns is None else self.crops_
+        block = {}
+        for crop in crops:
+            flag = (df["crop"] == crop).to_numpy(float)
+            block[f"trend_{crop}"] = df["trend"].to_numpy(float) * flag
+            for feat in self.weather_features:
+                block[f"{feat}_{crop}"] = df[feat].to_numpy(float) * flag
+        parts.append(pd.DataFrame(block, index=df.index))
+        X = pd.concat(parts, axis=1)
+        X.insert(0, "const", 1.0)
+        if columns is not None:
+            X = X.reindex(columns=columns, fill_value=0.0)
+        return X
+
+    def fit(self, df: pd.DataFrame, y: np.ndarray) -> "PooledFE":
+        self.crops_ = sorted(df["crop"].unique())
+        X = self._design(df)
+        self.columns_ = list(X.columns)
+        self.coef_, *_ = np.linalg.lstsq(X.to_numpy(), np.asarray(y, float), rcond=None)
+        return self
+
+    def predict(self, df: pd.DataFrame) -> np.ndarray:
+        return self._design(df, self.columns_).to_numpy() @ self.coef_
+
+
 class GlobalMean:
     """Everything is the average. The floor any model has to clear."""
 
@@ -90,8 +132,9 @@ class GlobalMean:
 class RaionMean:
     """Each raion keeps its own long-run average, and nothing else happens."""
 
-    def __init__(self, with_trend: bool = False):
+    def __init__(self, with_trend: bool = False, by: str = "raion"):
         self.with_trend = with_trend
+        self.by = by
 
     def fit(self, df: pd.DataFrame, y: np.ndarray) -> "RaionMean":
         y = np.asarray(y, float)
@@ -101,11 +144,11 @@ class RaionMean:
             self.slope_ = float(np.polyfit(t, y, 1)[0])
             y = y - self.slope_ * t
         self.mu_ = float(np.mean(y))
-        self.by_raion_ = pd.Series(y, index=df["raion"].to_numpy()).groupby(level=0).mean()
+        self.by_raion_ = pd.Series(y, index=df[self.by].to_numpy()).groupby(level=0).mean()
         return self
 
     def predict(self, df: pd.DataFrame) -> np.ndarray:
-        out = df["raion"].map(self.by_raion_).fillna(self.mu_).to_numpy(float)
+        out = df[self.by].map(self.by_raion_).fillna(self.mu_).to_numpy(float)
         return out + self.slope_ * df["trend"].to_numpy(float)
 
 
@@ -161,25 +204,31 @@ class SklearnAdapter:
     """
 
     def __init__(self, estimator, raions: list[str], one_hot: bool = False,
-                 spline_on: list[str] | None = None):
+                 spline_on: list[str] | None = None, crops: list[str] | None = None):
         self.estimator = estimator
         self.raions = list(raions)
         self.one_hot = one_hot
         self.spline_on = spline_on
+        self.crops = list(crops) if crops else None
 
     def _matrix(self, df: pd.DataFrame) -> np.ndarray:
         X = df[ML_FEATURES].to_numpy(float)
         if self.spline_on:
             idx = [ML_FEATURES.index(c) for c in self.spline_on]
             X = np.column_stack([X, self.spline_.transform(X[:, idx])])
-        if self.one_hot:
-            codes = pd.Categorical(df["raion"], categories=self.raions).codes
-            dummies = np.zeros((len(df), len(self.raions)))
-            ok = codes >= 0
-            dummies[np.arange(len(df))[ok], codes[ok]] = 1.0
-            return np.column_stack([X, dummies])
-        codes = pd.Categorical(df["raion"], categories=self.raions).codes
-        return np.column_stack([X, codes.astype(float)])
+        groups = [("raion", self.raions)]
+        if self.crops:
+            groups.append(("crop", self.crops))
+        for column, levels in groups:
+            codes = pd.Categorical(df[column], categories=levels).codes
+            if self.one_hot:
+                dummies = np.zeros((len(df), len(levels)))
+                ok = codes >= 0
+                dummies[np.arange(len(df))[ok], codes[ok]] = 1.0
+                X = np.column_stack([X, dummies])
+            else:
+                X = np.column_stack([X, codes.astype(float)])
+        return X
 
     def fit(self, df: pd.DataFrame, y: np.ndarray) -> "SklearnAdapter":
         if self.spline_on:

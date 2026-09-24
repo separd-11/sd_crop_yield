@@ -1,0 +1,9 @@
+scheme,model,gap,lo,hi,width
+random 5-fold,gradient boosting,-0.0546,-0.0886,-0.0269,0.0617
+random 5-fold,extra trees,-0.0496,-0.0982,-0.0155,0.0827
+leave-one-year-out,gradient boosting,0.0315,-0.0174,0.0881,0.1054
+leave-one-year-out,extra trees,0.0182,-0.0219,0.061,0.0829
+leave-one-raion-out,gradient boosting,-0.049,-0.0777,-0.0259,0.0517
+leave-one-raion-out,extra trees,-0.0645,-0.1013,-0.036,0.0653
+rolling origin,gradient boosting,-0.0156,-0.1145,0.082,0.1965
+rolling origin,extra trees,-0.0043,-0.0726,0.0675,0.1401
