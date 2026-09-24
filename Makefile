@@ -1,8 +1,8 @@
 PY ?= python
 
-.PHONY: all data panel explore model validate mechanism app clean
+.PHONY: all data panel explore model validate mechanism uncertainty app clean
 
-all: explore mechanism
+all: explore mechanism uncertainty
 
 data:
 	$(PY) src/01_fetch_yields.py
@@ -25,6 +25,9 @@ mechanism: validate
 	$(PY) src/08_extrapolation.py
 	$(PY) src/09_shrinkage.py
 	$(PY) src/10_map.py
+
+uncertainty: validate
+	$(PY) src/11_uncertainty.py
 
 app:
 	streamlit run app/app.py

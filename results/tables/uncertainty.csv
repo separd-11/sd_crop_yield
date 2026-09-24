@@ -1,0 +1,25 @@
+crop,scheme,gap,lo,hi,p_boosting_worse
+cartofi,random 5-fold,0.0895,0.0345,0.1438,0.999
+cartofi,leave-one-year-out,0.1244,0.0375,0.2164,0.999
+cartofi,leave-one-raion-out,0.0132,-0.0226,0.0501,0.7505
+floarea_soarelui,random 5-fold,-0.0763,-0.124,-0.0305,0.0
+floarea_soarelui,leave-one-year-out,0.0444,-0.0395,0.1217,0.8335
+floarea_soarelui,leave-one-raion-out,-0.0792,-0.1134,-0.0465,0.0
+griu,random 5-fold,-0.1227,-0.221,-0.0345,0.0
+griu,leave-one-year-out,0.0325,-0.024,0.1025,0.8525
+griu,leave-one-raion-out,-0.1259,-0.1954,-0.0616,0.0
+legume,random 5-fold,0.0768,0.0296,0.1303,0.9995
+legume,leave-one-year-out,0.0822,0.0335,0.1307,1.0
+legume,leave-one-raion-out,0.0112,-0.0188,0.0423,0.752
+orz,random 5-fold,-0.0933,-0.1633,-0.026,0.0
+orz,leave-one-year-out,0.0929,0.0235,0.1679,0.997
+orz,leave-one-raion-out,-0.0983,-0.1499,-0.0451,0.0
+porumb,random 5-fold,-0.2209,-0.355,-0.0905,0.0
+porumb,leave-one-year-out,0.0681,-0.0677,0.1909,0.8345
+porumb,leave-one-raion-out,-0.2003,-0.315,-0.0975,0.0
+sfecla,random 5-fold,0.0137,-0.0305,0.0481,0.7605
+sfecla,leave-one-year-out,0.0527,0.005,0.1,0.985
+sfecla,leave-one-raion-out,-0.1342,-0.1929,-0.0814,0.0
+soia,random 5-fold,-0.0331,-0.121,0.056,0.2465
+soia,leave-one-year-out,0.0461,-0.0124,0.107,0.9415
+soia,leave-one-raion-out,-0.0225,-0.0921,0.0383,0.2745
