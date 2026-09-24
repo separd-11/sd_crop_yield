@@ -3,7 +3,13 @@ script trains exactly the same objects the reporting scripts do."""
 from __future__ import annotations
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import HistGradientBoostingRegressor
+from sklearn.ensemble import (ExtraTreesRegressor, HistGradientBoostingRegressor,
+                              RandomForestRegressor)
+from sklearn.linear_model import RidgeCV
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.neural_network import MLPRegressor
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import SplineTransformer, StandardScaler
 
 ML_FEATURES = [
     "gdd", "kdd", "hot_days", "prec_season", "tmax_mean", "dry_spell", "prec_winter",
@@ -145,3 +151,76 @@ def gbm_matrix(df: pd.DataFrame, raion_levels: list[str]) -> np.ndarray:
 
 def rmse(y_true: np.ndarray, y_pred: np.ndarray) -> float:
     return float(np.sqrt(np.mean((np.asarray(y_true) - np.asarray(y_pred)) ** 2)))
+
+
+class SklearnAdapter:
+    """Wraps a scikit-learn estimator behind the fit(df, y) / predict(df) interface.
+
+    Tree ensembles take the raion as a single integer code; everything else gets
+    one-hot columns, because a code would be read as an ordering.
+    """
+
+    def __init__(self, estimator, raions: list[str], one_hot: bool = False,
+                 spline_on: list[str] | None = None):
+        self.estimator = estimator
+        self.raions = list(raions)
+        self.one_hot = one_hot
+        self.spline_on = spline_on
+
+    def _matrix(self, df: pd.DataFrame) -> np.ndarray:
+        X = df[ML_FEATURES].to_numpy(float)
+        if self.spline_on:
+            idx = [ML_FEATURES.index(c) for c in self.spline_on]
+            X = np.column_stack([X, self.spline_.transform(X[:, idx])])
+        if self.one_hot:
+            codes = pd.Categorical(df["raion"], categories=self.raions).codes
+            dummies = np.zeros((len(df), len(self.raions)))
+            ok = codes >= 0
+            dummies[np.arange(len(df))[ok], codes[ok]] = 1.0
+            return np.column_stack([X, dummies])
+        codes = pd.Categorical(df["raion"], categories=self.raions).codes
+        return np.column_stack([X, codes.astype(float)])
+
+    def fit(self, df: pd.DataFrame, y: np.ndarray) -> "SklearnAdapter":
+        if self.spline_on:
+            idx = [ML_FEATURES.index(c) for c in self.spline_on]
+            self.spline_ = SplineTransformer(n_knots=6, degree=3).fit(
+                df[ML_FEATURES].to_numpy(float)[:, idx])
+        self.estimator.fit(self._matrix(df), np.asarray(y, float))
+        return self
+
+    def predict(self, df: pd.DataFrame) -> np.ndarray:
+        return self.estimator.predict(self._matrix(df))
+
+
+SPLINE_ON = ["gdd", "kdd", "prec_season", "dry_spell"]
+
+
+def model_zoo(cfg: dict, raions: list[str]) -> dict:
+    """Every model the comparison runs, as factories so each fold gets a fresh one."""
+    seed = cfg["model"]["seed"]
+    ridge = lambda: make_pipeline(StandardScaler(), RidgeCV(alphas=np.logspace(-2, 3, 20)))
+    return {
+        "raion mean + trend": lambda: RaionMean(with_trend=True),
+        "baseline FE": lambda: BaselineFE(cfg["model"]["baseline_features"]),
+        "ridge, all features": lambda: SklearnAdapter(ridge(), raions, one_hot=True),
+        "splines + ridge": lambda: SklearnAdapter(ridge(), raions, one_hot=True,
+                                                  spline_on=SPLINE_ON),
+        "random forest": lambda: SklearnAdapter(
+            RandomForestRegressor(n_estimators=300, min_samples_leaf=3,
+                                  n_jobs=-1, random_state=seed), raions),
+        "extra trees": lambda: SklearnAdapter(
+            ExtraTreesRegressor(n_estimators=300, min_samples_leaf=3,
+                                n_jobs=-1, random_state=seed), raions),
+        "gradient boosting": lambda: SklearnAdapter(
+            make_gbm(cfg["model"]["gbm"], seed), raions),
+        "k nearest neighbours": lambda: SklearnAdapter(
+            make_pipeline(StandardScaler(),
+                          KNeighborsRegressor(n_neighbors=10, weights="distance")),
+            raions, one_hot=True),
+        "neural net": lambda: SklearnAdapter(
+            make_pipeline(StandardScaler(),
+                          MLPRegressor(hidden_layer_sizes=(64, 32), max_iter=1500,
+                                       early_stopping=True, random_state=seed)),
+            raions, one_hot=True),
+    }

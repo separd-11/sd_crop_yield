@@ -1,0 +1,10 @@
+model,random 5-fold,leave-one-year-out,leave-one-raion-out,rolling origin
+baseline FE,5.0,1.5,7.0,2.75
+extra trees,3.25,3.875,2.0,3.875
+gradient boosting,3.5,6.0,5.5,6.125
+k nearest neighbours,7.875,6.0,3.375,3.875
+neural net,7.75,7.625,9.0,7.5
+raion mean + trend,7.125,6.125,7.0,4.5
+random forest,3.875,7.0,2.875,6.875
+"ridge, all features",3.125,3.125,4.375,5.25
+splines + ridge,3.5,3.75,3.875,4.25
