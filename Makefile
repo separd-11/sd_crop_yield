@@ -1,6 +1,6 @@
 PY ?= python
 
-.PHONY: all data panel explore model validate mechanism uncertainty baselines robustness app clean
+.PHONY: all test data panel explore model validate mechanism uncertainty baselines robustness app clean
 
 all: explore mechanism uncertainty baselines robustness
 
@@ -42,6 +42,9 @@ robustness: panel
 
 app:
 	streamlit run app/app.py
+
+test:
+	$(PY) -m pytest tests/ -q
 
 clean:
 	rm -f data/processed/*.csv results/tables/*.csv results/figures/*.png

@@ -234,7 +234,10 @@ make all
 занимает несколько минут, большая часть — цикл с выбрасыванием районов.
 
 Отдельные этапы: `make data`, `make panel`, `make explore`, `make model`,
-`make validate`, `make mechanism`, `make app`.
+`make validate`, `make mechanism`, `make uncertainty`, `make baselines`,
+`make robustness`, `make app`.
+
+Проверки: `make test`. Точные версии пакетов — в `requirements-lock.txt`.
 
 ## Структура
 
