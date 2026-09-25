@@ -1,0 +1,161 @@
+features,n_features,crop,scheme,model,rmse
+all features,18,cartofi,leave-one-year-out,gradient boosting,0.9433
+all features,18,cartofi,leave-one-year-out,ridge,0.8192
+all features,18,cartofi,rolling origin,gradient boosting,0.9161
+all features,18,cartofi,rolling origin,ridge,0.7585
+all features,18,floarea_soarelui,leave-one-year-out,gradient boosting,0.3331
+all features,18,floarea_soarelui,leave-one-year-out,ridge,0.2577
+all features,18,floarea_soarelui,rolling origin,gradient boosting,0.3688
+all features,18,floarea_soarelui,rolling origin,ridge,0.3297
+all features,18,griu,leave-one-year-out,gradient boosting,0.3819
+all features,18,griu,leave-one-year-out,ridge,0.4161
+all features,18,griu,rolling origin,gradient boosting,0.4112
+all features,18,griu,rolling origin,ridge,0.4792
+all features,18,legume,leave-one-year-out,gradient boosting,0.7807
+all features,18,legume,leave-one-year-out,ridge,0.6889
+all features,18,legume,rolling origin,gradient boosting,0.8648
+all features,18,legume,rolling origin,ridge,0.7413
+all features,18,orz,leave-one-year-out,gradient boosting,0.4774
+all features,18,orz,leave-one-year-out,ridge,0.413
+all features,18,orz,rolling origin,gradient boosting,0.4273
+all features,18,orz,rolling origin,ridge,0.4904
+all features,18,porumb,leave-one-year-out,gradient boosting,0.734
+all features,18,porumb,leave-one-year-out,ridge,0.7074
+all features,18,porumb,rolling origin,gradient boosting,0.7793
+all features,18,porumb,rolling origin,ridge,0.8769
+all features,18,sfecla,leave-one-year-out,gradient boosting,0.4258
+all features,18,sfecla,leave-one-year-out,ridge,0.3768
+all features,18,sfecla,rolling origin,gradient boosting,0.4727
+all features,18,sfecla,rolling origin,ridge,0.3048
+all features,18,soia,leave-one-year-out,gradient boosting,0.7836
+all features,18,soia,leave-one-year-out,ridge,0.7799
+all features,18,soia,rolling origin,gradient boosting,0.8316
+all features,18,soia,rolling origin,ridge,1.0413
+without monthly detail,8,cartofi,leave-one-year-out,gradient boosting,0.8826
+without monthly detail,8,cartofi,leave-one-year-out,ridge,0.8209
+without monthly detail,8,cartofi,rolling origin,gradient boosting,0.8334
+without monthly detail,8,cartofi,rolling origin,ridge,0.7649
+without monthly detail,8,floarea_soarelui,leave-one-year-out,gradient boosting,0.2975
+without monthly detail,8,floarea_soarelui,leave-one-year-out,ridge,0.2345
+without monthly detail,8,floarea_soarelui,rolling origin,gradient boosting,0.2974
+without monthly detail,8,floarea_soarelui,rolling origin,ridge,0.2467
+without monthly detail,8,griu,leave-one-year-out,gradient boosting,0.3665
+without monthly detail,8,griu,leave-one-year-out,ridge,0.3402
+without monthly detail,8,griu,rolling origin,gradient boosting,0.4193
+without monthly detail,8,griu,rolling origin,ridge,0.3966
+without monthly detail,8,legume,leave-one-year-out,gradient boosting,0.7541
+without monthly detail,8,legume,leave-one-year-out,ridge,0.6934
+without monthly detail,8,legume,rolling origin,gradient boosting,0.8013
+without monthly detail,8,legume,rolling origin,ridge,0.7366
+without monthly detail,8,orz,leave-one-year-out,gradient boosting,0.4507
+without monthly detail,8,orz,leave-one-year-out,ridge,0.3763
+without monthly detail,8,orz,rolling origin,gradient boosting,0.4488
+without monthly detail,8,orz,rolling origin,ridge,0.4234
+without monthly detail,8,porumb,leave-one-year-out,gradient boosting,0.7227
+without monthly detail,8,porumb,leave-one-year-out,ridge,0.5548
+without monthly detail,8,porumb,rolling origin,gradient boosting,0.6953
+without monthly detail,8,porumb,rolling origin,ridge,0.6163
+without monthly detail,8,sfecla,leave-one-year-out,gradient boosting,0.3893
+without monthly detail,8,sfecla,leave-one-year-out,ridge,0.3694
+without monthly detail,8,sfecla,rolling origin,gradient boosting,0.3988
+without monthly detail,8,sfecla,rolling origin,ridge,0.304
+without monthly detail,8,soia,leave-one-year-out,gradient boosting,0.7654
+without monthly detail,8,soia,leave-one-year-out,ridge,0.7115
+without monthly detail,8,soia,rolling origin,gradient boosting,0.7367
+without monthly detail,8,soia,rolling origin,ridge,0.7274
+without dry spell,17,cartofi,leave-one-year-out,gradient boosting,0.9564
+without dry spell,17,cartofi,leave-one-year-out,ridge,0.8245
+without dry spell,17,cartofi,rolling origin,gradient boosting,0.9107
+without dry spell,17,cartofi,rolling origin,ridge,0.7578
+without dry spell,17,floarea_soarelui,leave-one-year-out,gradient boosting,0.3306
+without dry spell,17,floarea_soarelui,leave-one-year-out,ridge,0.2561
+without dry spell,17,floarea_soarelui,rolling origin,gradient boosting,0.3688
+without dry spell,17,floarea_soarelui,rolling origin,ridge,0.3382
+without dry spell,17,griu,leave-one-year-out,gradient boosting,0.3809
+without dry spell,17,griu,leave-one-year-out,ridge,0.4209
+without dry spell,17,griu,rolling origin,gradient boosting,0.4051
+without dry spell,17,griu,rolling origin,ridge,0.4873
+without dry spell,17,legume,leave-one-year-out,gradient boosting,0.7721
+without dry spell,17,legume,leave-one-year-out,ridge,0.689
+without dry spell,17,legume,rolling origin,gradient boosting,0.858
+without dry spell,17,legume,rolling origin,ridge,0.7358
+without dry spell,17,orz,leave-one-year-out,gradient boosting,0.4693
+without dry spell,17,orz,leave-one-year-out,ridge,0.4173
+without dry spell,17,orz,rolling origin,gradient boosting,0.4225
+without dry spell,17,orz,rolling origin,ridge,0.5013
+without dry spell,17,porumb,leave-one-year-out,gradient boosting,0.7306
+without dry spell,17,porumb,leave-one-year-out,ridge,0.6993
+without dry spell,17,porumb,rolling origin,gradient boosting,0.7766
+without dry spell,17,porumb,rolling origin,ridge,0.855
+without dry spell,17,sfecla,leave-one-year-out,gradient boosting,0.4226
+without dry spell,17,sfecla,leave-one-year-out,ridge,0.3741
+without dry spell,17,sfecla,rolling origin,gradient boosting,0.4908
+without dry spell,17,sfecla,rolling origin,ridge,0.3059
+without dry spell,17,soia,leave-one-year-out,gradient boosting,0.7976
+without dry spell,17,soia,leave-one-year-out,ridge,0.7702
+without dry spell,17,soia,rolling origin,gradient boosting,0.8301
+without dry spell,17,soia,rolling origin,ridge,1.1389
+without winter rain,17,cartofi,leave-one-year-out,gradient boosting,0.9534
+without winter rain,17,cartofi,leave-one-year-out,ridge,0.8159
+without winter rain,17,cartofi,rolling origin,gradient boosting,0.8788
+without winter rain,17,cartofi,rolling origin,ridge,0.7547
+without winter rain,17,floarea_soarelui,leave-one-year-out,gradient boosting,0.3937
+without winter rain,17,floarea_soarelui,leave-one-year-out,ridge,0.2875
+without winter rain,17,floarea_soarelui,rolling origin,gradient boosting,0.425
+without winter rain,17,floarea_soarelui,rolling origin,ridge,0.3509
+without winter rain,17,griu,leave-one-year-out,gradient boosting,0.4324
+without winter rain,17,griu,leave-one-year-out,ridge,0.4669
+without winter rain,17,griu,rolling origin,gradient boosting,0.483
+without winter rain,17,griu,rolling origin,ridge,0.5569
+without winter rain,17,legume,leave-one-year-out,gradient boosting,0.7734
+without winter rain,17,legume,leave-one-year-out,ridge,0.6869
+without winter rain,17,legume,rolling origin,gradient boosting,0.8498
+without winter rain,17,legume,rolling origin,ridge,0.7381
+without winter rain,17,orz,leave-one-year-out,gradient boosting,0.5006
+without winter rain,17,orz,leave-one-year-out,ridge,0.4668
+without winter rain,17,orz,rolling origin,gradient boosting,0.4621
+without winter rain,17,orz,rolling origin,ridge,0.5782
+without winter rain,17,porumb,leave-one-year-out,gradient boosting,0.8501
+without winter rain,17,porumb,leave-one-year-out,ridge,0.7539
+without winter rain,17,porumb,rolling origin,gradient boosting,0.8616
+without winter rain,17,porumb,rolling origin,ridge,0.9361
+without winter rain,17,sfecla,leave-one-year-out,gradient boosting,0.422
+without winter rain,17,sfecla,leave-one-year-out,ridge,0.374
+without winter rain,17,sfecla,rolling origin,gradient boosting,0.4508
+without winter rain,17,sfecla,rolling origin,ridge,0.3007
+without winter rain,17,soia,leave-one-year-out,gradient boosting,0.8041
+without winter rain,17,soia,leave-one-year-out,ridge,0.7888
+without winter rain,17,soia,rolling origin,gradient boosting,0.8349
+without winter rain,17,soia,rolling origin,ridge,0.9611
+degree days and rain only,4,cartofi,leave-one-year-out,gradient boosting,0.8609
+degree days and rain only,4,cartofi,leave-one-year-out,ridge,0.8152
+degree days and rain only,4,cartofi,rolling origin,gradient boosting,0.8636
+degree days and rain only,4,cartofi,rolling origin,ridge,0.7451
+degree days and rain only,4,floarea_soarelui,leave-one-year-out,gradient boosting,0.3281
+degree days and rain only,4,floarea_soarelui,leave-one-year-out,ridge,0.2842
+degree days and rain only,4,floarea_soarelui,rolling origin,gradient boosting,0.3373
+degree days and rain only,4,floarea_soarelui,rolling origin,ridge,0.3024
+degree days and rain only,4,griu,leave-one-year-out,gradient boosting,0.4331
+degree days and rain only,4,griu,leave-one-year-out,ridge,0.3452
+degree days and rain only,4,griu,rolling origin,gradient boosting,0.4632
+degree days and rain only,4,griu,rolling origin,ridge,0.4092
+degree days and rain only,4,legume,leave-one-year-out,gradient boosting,0.7596
+degree days and rain only,4,legume,leave-one-year-out,ridge,0.6944
+degree days and rain only,4,legume,rolling origin,gradient boosting,0.8069
+degree days and rain only,4,legume,rolling origin,ridge,0.7322
+degree days and rain only,4,orz,leave-one-year-out,gradient boosting,0.4934
+degree days and rain only,4,orz,leave-one-year-out,ridge,0.3834
+degree days and rain only,4,orz,rolling origin,gradient boosting,0.4731
+degree days and rain only,4,orz,rolling origin,ridge,0.4172
+degree days and rain only,4,porumb,leave-one-year-out,gradient boosting,0.7786
+degree days and rain only,4,porumb,leave-one-year-out,ridge,0.6614
+degree days and rain only,4,porumb,rolling origin,gradient boosting,0.7343
+degree days and rain only,4,porumb,rolling origin,ridge,0.6808
+degree days and rain only,4,sfecla,leave-one-year-out,gradient boosting,0.3739
+degree days and rain only,4,sfecla,leave-one-year-out,ridge,0.3502
+degree days and rain only,4,sfecla,rolling origin,gradient boosting,0.3438
+degree days and rain only,4,sfecla,rolling origin,ridge,0.3038
+degree days and rain only,4,soia,leave-one-year-out,gradient boosting,0.8346
+degree days and rain only,4,soia,leave-one-year-out,ridge,0.7305
+degree days and rain only,4,soia,rolling origin,gradient boosting,0.7555
+degree days and rain only,4,soia,rolling origin,ridge,0.6998

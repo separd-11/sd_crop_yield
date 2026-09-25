@@ -8,7 +8,7 @@ import pandas as pd
 
 from features import weather_features
 from utils import (AGGREGATES, CROP_LABELS, PROCESSED, RAW, WINTER_CROPS,
-                   get_logger, load_config, read_json)
+                   get_logger, load_config, read_json, region_map)
 
 log = get_logger("build_panel")
 
@@ -55,6 +55,7 @@ def main() -> None:
     panel["prec_season_sq"] = panel["prec_season"] ** 2
     panel["is_winter_crop"] = panel["crop"].isin(WINTER_CROPS).astype(int)
     panel["trend"] = panel["year"] - panel["year"].min()
+    panel["region"] = panel["raion"].map(region_map(geo))
 
     out = PROCESSED / "panel.csv"
     panel.to_csv(out, index=False)

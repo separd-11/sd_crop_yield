@@ -1,0 +1,145 @@
+crop,scheme,model,rmse
+cartofi,leave-one-raion-out,raion mean + trend,0.9164
+cartofi,leave-one-raion-out,baseline FE,0.9208
+cartofi,leave-one-raion-out,"ridge, all features",0.8968
+cartofi,leave-one-raion-out,splines + ridge,0.8903
+cartofi,leave-one-raion-out,random forest,0.9066
+cartofi,leave-one-raion-out,extra trees,0.9055
+cartofi,leave-one-raion-out,gradient boosting,0.9361
+cartofi,leave-one-raion-out,k nearest neighbours,0.9073
+cartofi,leave-one-raion-out,neural net,1.777
+cartofi,leave-one-region-out,raion mean + trend,0.92
+cartofi,leave-one-region-out,baseline FE,0.9389
+cartofi,leave-one-region-out,"ridge, all features",0.9195
+cartofi,leave-one-region-out,splines + ridge,0.919
+cartofi,leave-one-region-out,random forest,0.9217
+cartofi,leave-one-region-out,extra trees,0.9254
+cartofi,leave-one-region-out,gradient boosting,0.9719
+cartofi,leave-one-region-out,k nearest neighbours,0.9465
+cartofi,leave-one-region-out,neural net,1.5913
+floarea_soarelui,leave-one-raion-out,raion mean + trend,0.3748
+floarea_soarelui,leave-one-raion-out,baseline FE,0.2898
+floarea_soarelui,leave-one-raion-out,"ridge, all features",0.2355
+floarea_soarelui,leave-one-raion-out,splines + ridge,0.2287
+floarea_soarelui,leave-one-raion-out,random forest,0.1993
+floarea_soarelui,leave-one-raion-out,extra trees,0.1906
+floarea_soarelui,leave-one-raion-out,gradient boosting,0.2107
+floarea_soarelui,leave-one-raion-out,k nearest neighbours,0.2088
+floarea_soarelui,leave-one-raion-out,neural net,1.2064
+floarea_soarelui,leave-one-region-out,raion mean + trend,0.3997
+floarea_soarelui,leave-one-region-out,baseline FE,0.308
+floarea_soarelui,leave-one-region-out,"ridge, all features",0.2557
+floarea_soarelui,leave-one-region-out,splines + ridge,0.2595
+floarea_soarelui,leave-one-region-out,random forest,0.2712
+floarea_soarelui,leave-one-region-out,extra trees,0.2594
+floarea_soarelui,leave-one-region-out,gradient boosting,0.2683
+floarea_soarelui,leave-one-region-out,k nearest neighbours,0.2802
+floarea_soarelui,leave-one-region-out,neural net,0.9909
+griu,leave-one-raion-out,raion mean + trend,0.3851
+griu,leave-one-raion-out,baseline FE,0.3501
+griu,leave-one-raion-out,"ridge, all features",0.283
+griu,leave-one-raion-out,splines + ridge,0.2799
+griu,leave-one-raion-out,random forest,0.1972
+griu,leave-one-raion-out,extra trees,0.1899
+griu,leave-one-raion-out,gradient boosting,0.2241
+griu,leave-one-raion-out,k nearest neighbours,0.2093
+griu,leave-one-raion-out,neural net,1.3908
+griu,leave-one-region-out,raion mean + trend,0.4015
+griu,leave-one-region-out,baseline FE,0.3665
+griu,leave-one-region-out,"ridge, all features",0.3033
+griu,leave-one-region-out,splines + ridge,0.3111
+griu,leave-one-region-out,random forest,0.2915
+griu,leave-one-region-out,extra trees,0.2723
+griu,leave-one-region-out,gradient boosting,0.3005
+griu,leave-one-region-out,k nearest neighbours,0.289
+griu,leave-one-region-out,neural net,1.1567
+legume,leave-one-raion-out,raion mean + trend,0.8224
+legume,leave-one-raion-out,baseline FE,0.8328
+legume,leave-one-raion-out,"ridge, all features",0.8142
+legume,leave-one-raion-out,splines + ridge,0.8146
+legume,leave-one-raion-out,random forest,0.8401
+legume,leave-one-raion-out,extra trees,0.8253
+legume,leave-one-raion-out,gradient boosting,0.844
+legume,leave-one-raion-out,k nearest neighbours,0.8229
+legume,leave-one-raion-out,neural net,1.931
+legume,leave-one-region-out,raion mean + trend,0.8287
+legume,leave-one-region-out,baseline FE,0.853
+legume,leave-one-region-out,"ridge, all features",0.8208
+legume,leave-one-region-out,splines + ridge,0.8228
+legume,leave-one-region-out,random forest,0.8529
+legume,leave-one-region-out,extra trees,0.8352
+legume,leave-one-region-out,gradient boosting,0.8723
+legume,leave-one-region-out,k nearest neighbours,0.8312
+legume,leave-one-region-out,neural net,1.667
+orz,leave-one-raion-out,raion mean + trend,0.4258
+orz,leave-one-raion-out,baseline FE,0.4
+orz,leave-one-raion-out,"ridge, all features",0.3452
+orz,leave-one-raion-out,splines + ridge,0.3412
+orz,leave-one-raion-out,random forest,0.2781
+orz,leave-one-raion-out,extra trees,0.2681
+orz,leave-one-raion-out,gradient boosting,0.3018
+orz,leave-one-raion-out,k nearest neighbours,0.2845
+orz,leave-one-raion-out,neural net,1.334
+orz,leave-one-region-out,raion mean + trend,0.4476
+orz,leave-one-region-out,baseline FE,0.4181
+orz,leave-one-region-out,"ridge, all features",0.3741
+orz,leave-one-region-out,splines + ridge,0.3846
+orz,leave-one-region-out,random forest,0.3986
+orz,leave-one-region-out,extra trees,0.373
+orz,leave-one-region-out,gradient boosting,0.407
+orz,leave-one-region-out,k nearest neighbours,0.3762
+orz,leave-one-region-out,neural net,1.1098
+porumb,leave-one-raion-out,raion mean + trend,0.8146
+porumb,leave-one-raion-out,baseline FE,0.5987
+porumb,leave-one-raion-out,"ridge, all features",0.4724
+porumb,leave-one-raion-out,splines + ridge,0.4733
+porumb,leave-one-raion-out,random forest,0.3801
+porumb,leave-one-raion-out,extra trees,0.3637
+porumb,leave-one-raion-out,gradient boosting,0.3983
+porumb,leave-one-raion-out,k nearest neighbours,0.3968
+porumb,leave-one-raion-out,neural net,1.396
+porumb,leave-one-region-out,raion mean + trend,0.8336
+porumb,leave-one-region-out,baseline FE,0.6182
+porumb,leave-one-region-out,"ridge, all features",0.4959
+porumb,leave-one-region-out,splines + ridge,0.5164
+porumb,leave-one-region-out,random forest,0.451
+porumb,leave-one-region-out,extra trees,0.4327
+porumb,leave-one-region-out,gradient boosting,0.4739
+porumb,leave-one-region-out,k nearest neighbours,0.4642
+porumb,leave-one-region-out,neural net,1.1768
+sfecla,leave-one-raion-out,raion mean + trend,0.421
+sfecla,leave-one-raion-out,baseline FE,0.4897
+sfecla,leave-one-raion-out,"ridge, all features",0.3198
+sfecla,leave-one-raion-out,splines + ridge,0.3218
+sfecla,leave-one-raion-out,random forest,0.3148
+sfecla,leave-one-raion-out,extra trees,0.3166
+sfecla,leave-one-raion-out,gradient boosting,0.3449
+sfecla,leave-one-raion-out,k nearest neighbours,0.3133
+sfecla,leave-one-raion-out,neural net,1.3719
+sfecla,leave-one-region-out,raion mean + trend,0.5978
+sfecla,leave-one-region-out,baseline FE,0.5115
+sfecla,leave-one-region-out,"ridge, all features",0.456
+sfecla,leave-one-region-out,splines + ridge,0.4562
+sfecla,leave-one-region-out,random forest,0.4456
+sfecla,leave-one-region-out,extra trees,0.4363
+sfecla,leave-one-region-out,gradient boosting,0.457
+sfecla,leave-one-region-out,k nearest neighbours,0.5197
+sfecla,leave-one-region-out,neural net,1.469
+soia,leave-one-raion-out,raion mean + trend,0.8879
+soia,leave-one-raion-out,baseline FE,0.7053
+soia,leave-one-raion-out,"ridge, all features",0.6659
+soia,leave-one-raion-out,splines + ridge,0.6681
+soia,leave-one-raion-out,random forest,0.6124
+soia,leave-one-raion-out,extra trees,0.6057
+soia,leave-one-raion-out,gradient boosting,0.6791
+soia,leave-one-raion-out,k nearest neighbours,0.6569
+soia,leave-one-raion-out,neural net,0.9342
+soia,leave-one-region-out,raion mean + trend,1.0419
+soia,leave-one-region-out,baseline FE,0.7537
+soia,leave-one-region-out,"ridge, all features",0.7919
+soia,leave-one-region-out,splines + ridge,0.8237
+soia,leave-one-region-out,random forest,0.7839
+soia,leave-one-region-out,extra trees,0.7668
+soia,leave-one-region-out,gradient boosting,0.8193
+soia,leave-one-region-out,k nearest neighbours,0.8284
+soia,leave-one-region-out,neural net,0.9657

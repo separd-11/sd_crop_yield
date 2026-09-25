@@ -68,3 +68,23 @@ def territories(labels) -> list[str]:
     """Territory names from the BNS geography dimension, aggregates removed."""
     return [str(g).replace("..", "").strip() for g in labels
             if str(g).strip() not in AGGREGATES]
+
+
+def region_map(labels) -> dict[str, str]:
+    """Raion to development region, read off the order of the BNS geography rows.
+
+    A region header is followed by its raions, marked with the ".." prefix.
+    Chisinau and Gagauzia carry no header and stand for themselves.
+    """
+    regions, current = {}, None
+    for raw in labels:
+        label = str(raw).strip()
+        if label == "Total pe tara":
+            continue
+        if label in {"Nord", "Centru", "Sud"}:
+            current = label
+        elif label.startswith(".."):
+            regions[label.replace("..", "").strip()] = current or label
+        else:
+            regions[label] = label
+    return regions

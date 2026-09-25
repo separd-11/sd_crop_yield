@@ -1,8 +1,8 @@
 PY ?= python
 
-.PHONY: all data panel explore model validate mechanism uncertainty baselines app clean
+.PHONY: all data panel explore model validate mechanism uncertainty baselines robustness app clean
 
-all: explore mechanism uncertainty baselines
+all: explore mechanism uncertainty baselines robustness
 
 data:
 	$(PY) src/01_fetch_yields.py
@@ -34,6 +34,11 @@ baselines: panel
 	$(PY) src/13_rolling_origin.py
 	$(PY) src/14_model_zoo.py
 	$(PY) src/15_pooled.py
+
+robustness: panel
+	$(PY) src/16_nested_tuning.py
+	$(PY) src/17_regional_cv.py
+	$(PY) src/18_ablation.py
 
 app:
 	streamlit run app/app.py
