@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from models import (BaselineFE, GlobalMean, ML_FEATURES, RaionMean, gbm_matrix,
-                    make_gbm, rmse)
+from models import (BaselineFE, ML_FEATURES, RaionMean, gbm_matrix, make_gbm,
+                    rmse)
 from utils import FIGURES, PROCESSED, TABLES, get_logger, load_config
 
 log = get_logger("rolling")

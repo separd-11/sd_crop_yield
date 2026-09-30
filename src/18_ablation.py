@@ -56,34 +56,36 @@ def main() -> None:
     original = list(M.ML_FEATURES)
 
     rows = []
-    for name, features in SETS.items():
-        M.ML_FEATURES[:] = features          # the adapters read this list
-        need = sorted(set(features + cfg["model"]["baseline_features"] + ["log_yield"]))
-        for crop, sub in panel.groupby("crop"):
-            sub = sub.dropna(subset=need).reset_index(drop=True)
-            if len(sub) < 200:
-                continue
-            for scheme in SCHEMES:
-                preds = {"gradient boosting": [], "ridge": []}
-                truth = []
-                for tr, te in folds(sub, scheme):
-                    train, test = sub.iloc[tr], sub.iloc[te]
-                    y_tr = train["log_yield"].to_numpy()
-                    preds["gradient boosting"].append(SklearnAdapter(
-                        make_gbm(cfg["model"]["gbm"], seed), raions
-                    ).fit(train, y_tr).predict(test))
-                    preds["ridge"].append(SklearnAdapter(
-                        make_pipeline(StandardScaler(),
-                                      RidgeCV(alphas=np.logspace(-2, 3, 20))),
-                        raions, one_hot=True).fit(train, y_tr).predict(test))
-                    truth.append(test["log_yield"].to_numpy())
-                y = np.concatenate(truth)
-                for model, chunks in preds.items():
-                    rows.append({"features": name, "n_features": len(features),
-                                 "crop": crop, "scheme": scheme, "model": model,
-                                 "rmse": rmse(y, np.concatenate(chunks))})
-        log.info("%s done (%d features)", name, len(features))
-    M.ML_FEATURES[:] = original
+    try:
+        for name, features in SETS.items():
+            M.ML_FEATURES[:] = features          # the adapters read this list
+            need = sorted(set(features + cfg["model"]["baseline_features"] + ["log_yield"]))
+            for crop, sub in panel.groupby("crop"):
+                sub = sub.dropna(subset=need).reset_index(drop=True)
+                if len(sub) < 200:
+                    continue
+                for scheme in SCHEMES:
+                    preds = {"gradient boosting": [], "ridge": []}
+                    truth = []
+                    for tr, te in folds(sub, scheme):
+                        train, test = sub.iloc[tr], sub.iloc[te]
+                        y_tr = train["log_yield"].to_numpy()
+                        preds["gradient boosting"].append(SklearnAdapter(
+                            make_gbm(cfg["model"]["gbm"], seed), raions
+                        ).fit(train, y_tr).predict(test))
+                        preds["ridge"].append(SklearnAdapter(
+                            make_pipeline(StandardScaler(),
+                                          RidgeCV(alphas=np.logspace(-2, 3, 20))),
+                            raions, one_hot=True).fit(train, y_tr).predict(test))
+                        truth.append(test["log_yield"].to_numpy())
+                    y = np.concatenate(truth)
+                    for model, chunks in preds.items():
+                        rows.append({"features": name, "n_features": len(features),
+                                     "crop": crop, "scheme": scheme, "model": model,
+                                     "rmse": rmse(y, np.concatenate(chunks))})
+            log.info("%s done (%d features)", name, len(features))
+    finally:
+        M.ML_FEATURES[:] = original          # иначе список останется подменённым
 
     res = pd.DataFrame(rows)
     res.round(4).to_csv(TABLES / "ablation.csv", index=False)

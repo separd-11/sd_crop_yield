@@ -22,7 +22,6 @@ features:
   dry_day_mm: 1.0                  # a day below this counts as dry
 
 model:
-  target: "log_yield"
   baseline_features: ["gdd", "kdd", "prec_season", "prec_season_sq"]
   seed: 20260922
   # HistGradientBoosting hyper-parameters
