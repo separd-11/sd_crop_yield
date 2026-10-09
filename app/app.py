@@ -5,6 +5,10 @@ about it. The parametric model tracks good and bad years; the tree ensemble
 answers with something close to an average year. That shrinkage is the finding
 of the project, made touchable.
 
+A warming-scenario tab was dropped on purpose: neither model is validated
+outside the weather it was trained on, so offering the slider would promise
+what the work itself refuses.
+
 Run: streamlit run app/app.py
 """
 from __future__ import annotations
@@ -21,10 +25,9 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from features import weather_features                            # noqa: E402
 from geo import choropleth                                       # noqa: E402
 from models import BaselineFE, ML_FEATURES, gbm_matrix, make_gbm  # noqa: E402
-from utils import PROCESSED, RAW, TABLES, load_config, read_json  # noqa: E402
+from utils import PROCESSED, TABLES, load_config                  # noqa: E402
 
 CROPS = {
     "porumb": "Кукуруза", "griu": "Пшеница", "orz": "Ячмень",
@@ -65,37 +68,6 @@ def hold_out(crop: str, year: int) -> pd.DataFrame:
         BOOST: np.exp(pred_g)})
 
 
-@st.cache_data(show_spinner=False)
-def warming(crop: str, delta_t: float) -> tuple[float, float]:
-    """Shift every historical day, rebuild the features, predict with both."""
-    cfg = load_config()
-    weather = read_json(RAW / "weather.json")
-    frames = []
-    for raion, daily in weather.items():
-        shifted = dict(daily)
-        for key in ("temperature_2m_max", "temperature_2m_min"):
-            shifted[key] = [None if v is None else v + delta_t for v in daily[key]]
-        out = weather_features(shifted, cfg["features"])
-        out["raion"] = raion
-        frames.append(out)
-    feats = pd.concat(frames, ignore_index=True)
-
-    need = sorted(set(ML_FEATURES + cfg["model"]["baseline_features"] + ["log_yield"]))
-    sub = panel()
-    raions = sorted(sub["raion"].unique())
-    sub = sub[sub["crop"] == crop].dropna(subset=need)
-    y = sub["log_yield"].to_numpy()
-    base = BaselineFE(cfg["model"]["baseline_features"]).fit(sub, y)
-    gbm = make_gbm(cfg["model"]["gbm"], cfg["model"]["seed"]).fit(gbm_matrix(sub, raions), y)
-
-    feats = feats[feats["raion"].isin(sub["raion"].unique())].copy()
-    feats["prec_season_sq"] = feats["prec_season"] ** 2
-    feats["trend"] = sub["trend"].max()
-    feats = feats.dropna(subset=ML_FEATURES)
-    return (float(np.exp(base.predict(feats)).mean()),
-            float(np.exp(gbm.predict(gbm_matrix(feats, raions))).mean()))
-
-
 def maps(res: pd.DataFrame):
     """Three choropleths on one colour scale: truth and what each model said."""
     panels = [(FACT, FACT), ("Параметрическая", PARAM), ("Бустинг", BOOST)]
@@ -124,7 +96,7 @@ with st.sidebar:
     st.caption("Обе модели переобучаются с нуля без выбранного года, "
                "а затем предсказывают его.")
 
-tab1, tab2, tab3 = st.tabs(["Выбранный год", "Все годы", "Потепление"])
+tab1, tab2 = st.tabs(["Выбранный год", "Все годы"])
 
 with tab1:
     res = hold_out(crop, year)
@@ -164,21 +136,3 @@ with tab2:
         "По всем культурам параметрическая модель удерживает 60% размаха между "
         "годами, бустинг — 38%. До ста процентов не дотягивает никто, потому "
         "что погода объясняет не всё, но ансамбль отдаёт почти вдвое больше.")
-
-with tab3:
-    st.subheader("Добавляем тепло к каждому дню за всю историю наблюдений")
-    delta = st.slider("Потепление, °C", 0.0, 4.0, 0.0, 0.5, key="dt")
-    with st.spinner("Пересобираю погоду..."):
-        b0, g0 = warming(crop, 0.0)
-        b1, g1 = warming(crop, delta)
-    c1, c2 = st.columns(2)
-    c1.metric("Параметрическая модель", f"{b1:.1f} ц/га",
-              f"{100 * (b1 / b0 - 1):+.1f}%" if delta else None)
-    c2.metric("Бустинг", f"{g1:.1f} ц/га",
-              f"{100 * (g1 / g0 - 1):+.1f}%" if delta else None)
-    st.info(
-        "Эту вкладку читай осторожно. Ни одна из моделей не проверена за "
-        "пределами погоды, на которой обучалась, а первые две вкладки "
-        "показывают, что ансамбль сглаживает даже те годы, которые видел. "
-        "Технологический уровень заморожен на последнем наблюдаемом, адаптация "
-        "не учитывается — это иллюстрация поведения моделей, а не прогноз.")
